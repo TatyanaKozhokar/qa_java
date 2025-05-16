@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class LionUnknownSexExceptionTest {
 
-    public LionUnknownSexExceptionTest() throws Exception {
+    public LionUnknownSexExceptionTest(){
     }
 
     @Before

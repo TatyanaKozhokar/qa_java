@@ -31,17 +31,10 @@ public class FelineParametrizedTest {
         });
     }
 
-    @Before
-    public void init() {
-        MockitoAnnotations.openMocks(this);
-    }
-
-    @Mock
-    Animal mockAnimal;
-
     @Test
     public void getKittensParametrized() {
-        Feline feline = new Feline(mockAnimal);
+        Animal animal = new Animal();
+        Feline feline = new Feline(animal);
         assertEquals(input, feline.getKittens(input));
     }
 }

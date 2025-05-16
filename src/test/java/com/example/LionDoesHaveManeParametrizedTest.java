@@ -15,19 +15,17 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class LionDoesHaveManeParametrizedTest {
     private final String sex;
-    private final Class<? extends Exception> expectedException;
 
-    public LionDoesHaveManeParametrizedTest(String sex, Class<? extends Exception> expectedException) {
+    public LionDoesHaveManeParametrizedTest(String sex) {
         this.sex = sex;
-        this.expectedException = expectedException;
+
     }
 
-    @Parameterized.Parameters(name = "{index}: sex = {0}, expectedException = {1}")
+    @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"Самец", null},     // Нет исключения
-                {"Самка", null},     // Нет исключения
-                {"Олег", Exception.class}  // Ожидается исключение
+                {"Самец"},
+                {"Самка"},
         });
     }
 
@@ -41,24 +39,11 @@ public class LionDoesHaveManeParametrizedTest {
 
     @Test
     public void doesHaveManeTest() throws Exception {
-        if (expectedException != null) {
-            try {
-                new Lion(sex, mockFeline);
-                fail("Ожидалось исключение, но его не было");
-            } catch (Exception e) {
-                assertTrue(expectedException.isInstance(e));
-                assertEquals(
-                        "Используйте допустимые значения пола животного - самец или самка",
-                        e.getMessage()
-                );
-            }
-        } else {
             Lion lion = new Lion(sex, mockFeline);
             if ("Самец".equals(sex)) {
                 assertTrue(lion.doesHaveMane());
             } else {
                 assertFalse(lion.doesHaveMane());
             }
-        }
         }
     }
