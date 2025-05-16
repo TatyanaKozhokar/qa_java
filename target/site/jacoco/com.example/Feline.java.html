@@ -2,33 +2,28 @@
 
 import java.util.List;
 
-public class Feline extends Animal implements Predator {
-    Animal animal;
-
-<span class="fc" id="L8">    public Feline(Animal animal) {</span>
-<span class="fc" id="L9">        this.animal = animal;</span>
-<span class="fc" id="L10">    }</span>
+<span class="fc" id="L5">public class Feline extends Animal implements Predator {</span>
 
     @Override
     public List&lt;String&gt; eatMeat() throws Exception {
-<span class="fc" id="L14">        return getFood(&quot;Хищник&quot;);</span>
+<span class="fc" id="L9">        return getFood(&quot;Хищник&quot;);</span>
     }
 
 
 
     @Override
     public String getFamily() {
-<span class="fc" id="L21">        return &quot;Кошачьи&quot;;</span>
+<span class="fc" id="L16">        return &quot;Кошачьи&quot;;</span>
     }
 
 
     public int getKittens() {
-<span class="fc" id="L26">        return getKittens(1);</span>
+<span class="fc" id="L21">        return getKittens(1);</span>
     }
 
 
     public int getKittens(int kittensCount) {
-<span class="fc" id="L31">        return kittensCount;</span>
+<span class="fc" id="L26">        return kittensCount;</span>
     }
 
 }

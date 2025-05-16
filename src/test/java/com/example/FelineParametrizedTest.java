@@ -31,8 +31,7 @@ public class FelineParametrizedTest {
 
     @Test
     public void getKittensParametrized() {
-        Animal animal = new Animal();
-        Feline feline = new Feline(animal);
+        Feline feline = new Feline();
         assertEquals(input, feline.getKittens(input));
     }
 }
