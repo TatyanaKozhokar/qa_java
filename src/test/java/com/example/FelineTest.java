@@ -13,7 +13,6 @@ public class FelineTest {
 
     @Before
     public void setUp() {
-        Animal animal = new Animal();
         feline = new Feline();
     }
 
